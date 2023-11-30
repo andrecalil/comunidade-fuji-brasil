@@ -12,7 +12,7 @@ function App() {
     const [linksEnabled, setLinksEnabled] = useState(false);
     const { data, isFetching } = useData();
 
-    const enabledLinks = () => {
+    const enableLinks = () => {
         window.grecaptcha.ready(function() {
             window.grecaptcha.execute(process.env.REACT_APP_SITE_KEY, {action: 'submit'}).then(function(token) {
                 setLinksEnabled(true);
@@ -68,7 +68,7 @@ function App() {
                     <div className="col-lg-8">
                         <FontAwesomeIcon icon={faWarning} className="fa-2x mb-2" />
                         <h4 className="mb-4">Você é humano?</h4>
-                        <p className="text-white-50 mb-3"><button className='btn btn-outline-danger' onClick={enabledLinks}>Habilite os links de WhatsApp!</button></p>
+                        <p className="text-white-50 mb-3"><button className='btn btn-outline-danger' onClick={enableLinks}>Habilite os links de WhatsApp!</button></p>
                     </div>
                 </div>
             </div>
