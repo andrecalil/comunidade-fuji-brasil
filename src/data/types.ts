@@ -27,6 +27,7 @@ export type PartnershipType = {
   title: string;
   description: string;
   image: string;
-  whatsapp: string;
+  whatsapp?: string;
   site: string;
+  mode: "w" | "c";
 };
